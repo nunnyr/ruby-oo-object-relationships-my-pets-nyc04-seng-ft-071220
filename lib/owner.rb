@@ -6,7 +6,7 @@ class Owner
 #eventually we'll create an @@ - class variable 
 @@all = []
 
-#"Hi Nunny!"
+#"Hi Nunny!" ""
 attr_reader :name, :species 
 
   def initialize(name_param)
@@ -22,6 +22,17 @@ attr_reader :name, :species
   def self.all
      @@all
   end
+
+  def self.count
+    @@all.length
+  end
+
+  def self.reset_all
+    @@all.clear
+  end
+
+
+
 
 end
 
