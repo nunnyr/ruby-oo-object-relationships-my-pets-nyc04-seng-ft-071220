@@ -6,7 +6,7 @@ class Owner
 #eventually we'll create an @@ - class variable 
 @@all = []
 
-
+#"Hi Nunny!"
 attr_reader :name, :species 
 
   def initialize(name_param)
