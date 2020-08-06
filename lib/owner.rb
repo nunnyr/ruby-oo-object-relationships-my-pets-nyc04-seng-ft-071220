@@ -32,36 +32,49 @@ attr_reader :name, :species
   end
 
   def cats
-            cat_owners = Cat.all.select do |cat_info|
-                      cat_info.owner == self
-            end
-
-            # .all.select do |cat_hash|
-            # cat.owner == self
-            #select is gonna do it is going to return a subarray of owners that have cats
-            #
-
+    cat_owners = Cat.all.select do |cat_info|
+      cat_info.owner == self
+    end
   end 
 
-  def dogs 
+  # .all.select do |cat_hash|
+  # cat.owner == self
+  #select is gonna do it is going to return a subarray of owners that have cats
+  #
 
+  def dogs 
     dog_owners = Dog.all.select do |dog_info|
       dog_info.owner == self
     end
   end 
 
-  def buy_cat 
-    
-
+  def buy_cat(cat_name_param)
+    Cat.new(cat_name_param, self)
   end
 
+  def buy_dog(dog_name_param)
+    Dog.new(dog_name_param, self)
+  end
 
+  def walk_dogs
 
+    dog_array = Dog.all 
+    dog_array.map do |dog_info|
+      dog_info.mood = "happy"
+    end
+  end
 
+  def feed_cats
+    cat_array = Cat.all
+    cat_array.map do |cat_info|
+      cat_info.mood = "happy"
+    end
+  end
+  
 
-
-
-
+    #dog.mood == "happy"
+#binding.pry
+  
 end
 
 # Owner.new("Coco","Eric")
