@@ -71,13 +71,24 @@ attr_reader :name, :species
     end
   end
   
+  def sell_pets
+    all_pets = Dog.all + Cat.all
 
-    #dog.mood == "happy"
-#binding.pry
+    change_mood = all_pets.map do |pet_info| 
+      pet_info.mood = "nervous"
+      pet_info.owner = nil
+    end
+  end
+    
+  def list_pets
+    #self
+    "I have #{self.dogs.count} dog(s), and #{self.cats.count} cat(s)."
+  #binding.pry
+  end
+
   
 end
 
-# Owner.new("Coco","Eric")
-#binding.pry 
+
 
 #0
